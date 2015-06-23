@@ -1,0 +1,50 @@
+﻿<Window x:Class="ListBoxFiltering.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:src ="clr-namespace:ListBoxFiltering"
+        xmlns:scm="clr-namespace:System.Windows.Interop;assembly=WindowsBase"
+        xmlns:data="http://schemas.microsoft.com/netfx/2009/xaml/presentation"
+        Title="MainWindow" Height="350" SizeToContent="Width">
+    <Window.Resources>
+        <ObjectDataProvider x:Key="cusList"
+                            MethodName="GetAllCustomer"
+                            ObjectType="{x:Type src:CustomerDataContextDataContext}">
+            
+        </ObjectDataProvider>
+                   
+          
+        <DataTemplate x:Key="itemData">
+            <StackPanel Orientation="Horizontal">
+            <Label Content="{Binding Path=ContactName}"></Label>
+            <Label Content="{Binding Path=CompanyName}"></Label>
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <GroupBox Header="Sorting Optios" Grid.Row="0" Margin="5">
+            <StackPanel Orientation="Horizontal">
+                <RadioButton Name="rdoSortLastNae"
+                             Margin="8"
+                             Tag="ContactName"
+                             IsChecked="True"
+                             Checked="SortTheData">Sort By Customer Name
+                </RadioButton>
+                <RadioButton Name="SortByFirstName"
+                             Margin="8"
+                             Tag="ComanyName"
+                             Checked="SortTheData">Sort by CompanyName</RadioButton>
+                <Label Content="Enter Company Name To serach" Margin="6.5"></Label>
+                <TextBox Width="120" Height="30" Name="txtLast" TextChanged="txtLast_TextChanged"></TextBox>
+                <Button Content="Serach" Name="serchbtn" Width="120" Height="30" Margin="5" Click="serchbtn_Click"></Button>
+            </StackPanel>
+        </GroupBox>
+        <ListBox Grid.Row="1" ItemsSource="{Binding Source={StaticResource cusList}}" ItemTemplate="{StaticResource itemData}"
+              TextSearch.TextPath="ContactName"  Name="contatcList" IsTextSearchEnabled="True"     >
+           
+        </ListBox>
+    </Grid>
+</Window>

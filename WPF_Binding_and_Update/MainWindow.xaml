@@ -1,0 +1,85 @@
+﻿<Window x:Class="WPF_Binding_and_Update.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:src="clr-namespace:WPF_Binding_and_Update"
+        Title="MainWindow" Height="350" Width="725" Loaded="Window_Loaded">
+    <Window.Resources>
+        <ObjectDataProvider x:Key="empSrc" ObjectType="{x:Type src:NotWindEmplyeeDataContext}"
+                             MethodName="GetallEmp"></ObjectDataProvider>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            
+        </Grid.ColumnDefinitions>
+        <ListBox Grid.Column="0" ItemsSource="{Binding}"
+                 ItemTemplate="{StaticResource empList}"
+                 IsSynchronizedWithCurrentItem="True"
+                 TextSearch.TextPath="LastName"
+                 IsTextSearchEnabled="True"
+                 Name="emplist">
+                 
+        </ListBox>
+        <StackPanel Grid.Column="1">
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="0"
+                       Margin="6,2,6,2" Padding="5"
+                       Content="First Name :"/>
+                <TextBox Grid.Column="1" 
+                         Grid.Row="0"
+                         Width="170"
+                         Margin="6,2,6,2"
+                         Padding="5"
+                         Text="{Binding Path=FirstName}"></TextBox>
+
+                <Label Grid.Row="1" Grid.Column="0"
+                       Margin="6,2,6,2" Padding="5"
+                       Content="Last Name :"/>
+                <TextBox Grid.Column="1" 
+                         Grid.Row="1"
+                         Width="170"
+                         Margin="6,2,6,2"
+                         Text="{Binding Path=LastName}"/>
+                
+                <Label Grid.Row="2" Grid.Column="0"
+                       Margin="6,2,6,2" Padding="5"
+                       Content="Title :"/>
+                <TextBox Grid.Column="1" 
+                         Grid.Row="2"
+                         Width="170"
+                         Margin="6,2,6,2"
+                         Name="titletxtbox"
+                         Text="{Binding Path=Title}"/>
+
+                <Label Grid.Row="3" Grid.Column="0"
+                       Margin="6,2,6,2" Padding="5"
+                       Content="Country :"/>
+                <TextBox Grid.Column="1" 
+                         Grid.Row="3"
+                         Width="170"
+                         Name="cotrytextbox"
+                         Margin="6,2,6,2"
+                         Text="{Binding Path=Country}"/>
+                <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.ColumnSpan="4" Margin="4">
+                    <Button Name="Savebtn" Click="Savebtn_Click" Width="60" Height="30" Content="Save" Margin="4" HorizontalAlignment="Left"></Button>
+                    <Button Name="Deletebtn" Click="Deletebtn_Click" Width="60" Height="30" Content="Delete" Margin="4" HorizontalAlignment="Left"></Button>
+                    <Button Name="Addbtn" Click="Addbtn_Click" Width="60" Height="30" Content="Add" Margin="4" HorizontalAlignment="Left"></Button>
+                    <Button Name="Cancelbtn" Click="Cancelbtn_Click" Width="60" Height="30" Content="Cancel" HorizontalAlignment="Left"></Button>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Window>

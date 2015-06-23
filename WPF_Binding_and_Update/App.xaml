@@ -1,0 +1,23 @@
+﻿<Application x:Class="WPF_Binding_and_Update.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:src="clr-namespace:WPF_Binding_and_Update"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ObjectDataProvider x:Key="empSrc" ObjectType="{x:Type src:NotWindEmplyeeDataContext}"
+                             MethodName="GetallEmp"></ObjectDataProvider>
+        <DataTemplate x:Key="empList">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="{Binding Path=Title}" FontSize="16" Foreground="DarkBlue"/>
+                    
+                    
+                </StackPanel>
+                <Label Content="{Binding Path=FirstName}" FontSize="12"/>
+                <Label Content="{Binding Path=LastName}" FontSize="12"/>
+                <Label Content="{Binding Path=Country}" FontSize="12"/>
+            </StackPanel>
+        </DataTemplate>
+        
+    </Application.Resources>
+</Application>

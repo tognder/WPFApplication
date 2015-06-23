@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListBoxType", "ListBoxType\ListBoxType.csproj", "{B95AE815-8F49-4829-A10F-40911D07760D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_Binding_and_Update", "WPF_Binding_and_Update\WPF_Binding_and_Update.csproj", "{D75401A5-F174-4036-8923-14C21D2A504D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListBox_XML", "ListBox_XML\ListBox_XML.csproj", "{D241252F-DA0B-42A8-934B-A37ADA56C569}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListBoxFiltering", "ListBoxFiltering\ListBoxFiltering.csproj", "{771855F8-B384-4238-B854-27CB16E3766F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B95AE815-8F49-4829-A10F-40911D07760D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B95AE815-8F49-4829-A10F-40911D07760D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B95AE815-8F49-4829-A10F-40911D07760D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B95AE815-8F49-4829-A10F-40911D07760D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D75401A5-F174-4036-8923-14C21D2A504D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D75401A5-F174-4036-8923-14C21D2A504D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D75401A5-F174-4036-8923-14C21D2A504D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D75401A5-F174-4036-8923-14C21D2A504D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D241252F-DA0B-42A8-934B-A37ADA56C569}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D241252F-DA0B-42A8-934B-A37ADA56C569}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D241252F-DA0B-42A8-934B-A37ADA56C569}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D241252F-DA0B-42A8-934B-A37ADA56C569}.Release|Any CPU.Build.0 = Release|Any CPU
+		{771855F8-B384-4238-B854-27CB16E3766F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{771855F8-B384-4238-B854-27CB16E3766F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{771855F8-B384-4238-B854-27CB16E3766F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{771855F8-B384-4238-B854-27CB16E3766F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

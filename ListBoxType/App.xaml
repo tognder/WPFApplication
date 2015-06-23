@@ -1,0 +1,77 @@
+﻿<Application x:Class="ListBoxType.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:src="clr-namespace:ListBoxType"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ObjectDataProvider x:Key="empSrc"
+                             ObjectType="{x:Type src:EmployeesDataContext}"
+                             MethodName="GetAllEmp">
+            
+        </ObjectDataProvider>
+        <DataTemplate x:Key="listTemp">
+            <Border BorderBrush="Gray" Margin="6,2,6,2" Padding="4,4,4,4"
+                    BorderThickness="2" CornerRadius="10" Background="AliceBlue" Width="350">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="8">
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="{Binding Path=LastName}"
+                                   
+                                   Width="100"
+                                   FontSize="16"
+                                   Foreground="Black"/>
+                        <TextBlock Text="{Binding Path=FirstName}"
+                                   TextWrapping="Wrap"
+                                   Width="100"
+                                   FontSize="16"
+                                   Foreground="Black"/>
+                    </StackPanel>
+                    <Label Content="Start Working Date : "/>
+                    <TextBlock Text="{Binding Path=HireDate}"
+                               FontSize="12"
+                               Foreground="Black"/>
+                </StackPanel>
+            </Border>
+            
+        </DataTemplate>
+<!--End of First List box -->
+
+        <!--Start Secound Listbox-->
+        <DataTemplate x:Key="gpListbox">
+            <Border BorderBrush="DarkBlue" Background="AliceBlue"
+                    BorderThickness="1" CornerRadius="4" Margin="6,2,6,2" Padding="5">
+            <StackPanel Orientation="Horizontal">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="First Name :" Grid.Row="0" Grid.Column="0"></Label>
+                        <TextBlock Grid.Row="0" VerticalAlignment="Center" Grid.Column="1" Text="{Binding Path=FirstName}"/>
+                        <TextBlock Grid.Row="1" Text="{Binding Path=LastName}"/>
+                    </Grid>
+              
+                 
+                
+                 
+                
+            </StackPanel>
+            </Border>
+        </DataTemplate>
+        <CollectionViewSource x:Key="cutSorus"
+                              Source="{Binding Source={StaticResource ResourceKey=empSrc}}">
+            <CollectionViewSource.GroupDescriptions>
+                <PropertyGroupDescription PropertyName="Title"></PropertyGroupDescription>
+            </CollectionViewSource.GroupDescriptions>
+        </CollectionViewSource>
+        
+       
+    </Application.Resources>
+</Application>
